@@ -31,7 +31,7 @@ void main() {
   }
 `;
 
-const Cube = () => {
+const Cube = ({start}) => {
     
     const mesh = useRef()
     const uniform = useMemo(()=>{
@@ -45,8 +45,10 @@ const Cube = () => {
     },[]);
 
     useFrame((state)=>{
+        //  console.log(state);
         const { clock } = state;
         mesh.current.material.uniforms.u_time.value = clock.getElapsedTime();
+        clock.running = start;
     })
 
     return (
