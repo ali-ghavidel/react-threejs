@@ -2,11 +2,11 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei'
 import Cube from './Cube';
-const Scene = ({start}) => {
+const Scene = () => {
     return (
         <Canvas className='canvas' camera={{position: [1.0,1.0,1.0], fov: 75}}>
-            <Cube start={start} />
-            <axesHelper />
+            <Cube />
+            {/* <axesHelper /> */}
             <OrbitControls />
         </Canvas>
     );
